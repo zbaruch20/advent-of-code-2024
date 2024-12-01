@@ -1,0 +1,5 @@
+hello
+world
+go bucks
+advent of code
+6.25
