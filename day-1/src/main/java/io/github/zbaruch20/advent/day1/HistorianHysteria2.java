@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.Map;
 
 public class HistorianHysteria2 {
@@ -26,8 +27,8 @@ public class HistorianHysteria2 {
                 .sum();
     }
 
-    private static <T> Map<T, Integer> getCounts(Collection<T> list) {
-        Map<T, Integer> counts = Maps.newHashMap();
+    private static <T extends Comparable<? super T>> Map<T, Integer> getCounts(Collection<T> list) {
+        Map<T, Integer> counts = Maps.newTreeMap(Comparator.<T>naturalOrder());
         list.forEach(x -> counts.put(x, counts.getOrDefault(x, 0) + 1));
         return counts;
     }
