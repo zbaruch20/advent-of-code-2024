@@ -13,9 +13,7 @@ public class RedNosedReportsCommon {
     public static final int MIN_DISTANCE = 1;
     public static final int MAX_DISTANCE = 3;
 
-    static boolean isSafe(String report) {
-        List<Integer> levels = getLevels(report);
-
+    static boolean isSafe(List<Integer> levels) {
         // initial checks to see if we're increasing or decreasing
         if (levels.size() < 2) return false;
         if (levels.get(0).equals(levels.get(1))) return false; // equal consecutive levels is unsafe

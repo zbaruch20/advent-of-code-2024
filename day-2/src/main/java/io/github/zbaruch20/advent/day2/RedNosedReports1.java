@@ -16,6 +16,7 @@ public class RedNosedReports1 {
     public static long numSafeReports(String resource) {
         return PuzzleInputReader.readLines(resource)
                 .stream()
+                .map(RedNosedReportsCommon::getLevels)
                 .filter(RedNosedReportsCommon::isSafe)
                 .count();
     }

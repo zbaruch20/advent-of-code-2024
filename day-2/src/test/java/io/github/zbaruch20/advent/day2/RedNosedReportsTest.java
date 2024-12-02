@@ -9,4 +9,10 @@ public class RedNosedReportsTest {
         long numSafeReports = RedNosedReports1.numSafeReports(RedNosedReportsCommon.DAY_2_TEST_RESOURCE);
         Assertions.assertEquals(2, numSafeReports);
     }
+
+    @Test
+    public void numSafeReportsWithDampener() {
+        long numSafeReports = RedNosedReports2.numSafeReportsWithDampener(RedNosedReportsCommon.DAY_2_TEST_RESOURCE);
+        Assertions.assertEquals(4, numSafeReports);
+    }
 }
